@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SEAndroidManager</string>
+    <string name="activity_name">SEAndroidManager</string>
+    <string name="app_label">SEAndroid Manager</string>
+    <string name="app_label_launcher">SEAndroid Manager</string>
+    <string name="selinux_enforcing_fragment_title">Change SELinux Enforcing Mode</string>
+    <string name="selinux_boolean_fragment_title">Manage SELinux Booleans</string>
+    <string name="selinux_not_enabled">SELinux is not enabled</string>
+    <string name="selinux_status">SELinux status</string>
+    <string name="selinux_title">SELinux</string>
+    <string name="selinux_set_enforcing">SELinux Enforcing Mode</string>
+    <string name="selinux_set_enforcing_summary">Toggle SELinux Enforcing Mode</string>
+    <string name="selinux_manage_booleans">SELinux Booleans</string>
+    <string name="selinux_manage_booleans_summary">Manage SELinux Booleans</string>
+    <string name="selinux_no_booleans">No Booleans</string>
+</resources>

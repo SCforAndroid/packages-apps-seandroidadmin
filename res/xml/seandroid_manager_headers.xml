@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header
+        android:fragment="com.android.seandroid_manager.SEAndroidManager$SELinuxEnforcingFragment"
+        android:title="@string/selinux_enforcing_fragment_title">
+    </header>
+
+    <header
+        android:fragment="com.android.seandroid_manager.SEAndroidManager$SELinuxBooleanFragment"
+        android:title="@string/selinux_boolean_fragment_title">
+    </header>
+
+</preference-headers>
