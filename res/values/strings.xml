@@ -4,6 +4,7 @@
     <string name="activity_name">SEAndroidManager</string>
     <string name="app_label">SEAndroid Manager</string>
     <string name="app_label_launcher">SEAndroid Manager</string>
+    <string name="selinux_disabled_fragment_title">SELinux Disabled</string>
     <string name="selinux_enforcing_fragment_title">Change SELinux Enforcing Mode</string>
     <string name="selinux_boolean_fragment_title">Manage SELinux Booleans</string>
     <string name="selinux_not_enabled">SELinux is not enabled</string>

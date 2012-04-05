@@ -24,7 +24,7 @@ public class RestoreSettings extends BroadcastReceiver {
             if (enforcing != null) {
                 SELinux.setSELinuxEnforce(enforcing.contentEquals("1") ? true : false);
             }
-       
+
             // Restore SELinux boolean settings
             final String booleanList = Settings.Secure.getString(mContentResolver,
                                                                  Settings.Secure.SELINUX_BOOLEANS);

@@ -22,9 +22,24 @@ import android.widget.TextView;
 import java.util.List;
 
 public class SEAndroidManager extends PreferenceActivity {
+
     @Override
     public void onBuildHeaders(List<Header> target) {
-        loadHeadersFromResource(R.xml.seandroid_manager_headers, target);
+        if (SELinux.isSELinuxEnabled()) {
+            loadHeadersFromResource(R.xml.enabled_headers, target);
+        } else {
+            loadHeadersFromResource(R.xml.disabled_headers, target);
+        }
+    }
+
+    public static class SELinuxDisabledFragment extends PreferenceFragment {
+
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            addPreferencesFromResource(R.xml.selinux_not_enabled);
+        }
     }
 
     public static class SELinuxEnforcingFragment extends PreferenceFragment {
@@ -57,14 +72,22 @@ public class SEAndroidManager extends PreferenceActivity {
             if (preference == mSELinuxToggleEnforce) {
                 SELinux.setSELinuxEnforce(!SELinux.isSELinuxEnforced());
                 mSELinuxToggleEnforce.setChecked(SELinux.isSELinuxEnforced());
+                saveEnforcing();
             }
             return true;
+        }
+
+        private void saveEnforcing()
+        {
+            String enforcing = SELinux.isSELinuxEnforced() ? "1" : "0";
+            Settings.Secure.putString(getActivity().getContentResolver(),
+                                      Settings.Secure.SELINUX_ENFORCING,
+                                      enforcing);
         }
     }
 
     public static class SELinuxBooleanFragment extends ListFragment {
 
-        private static final String PREF_FILE = "seandroid_settings";
         private SharedPreferences mPrefs;
         private myBooleanAdapter mAdapter;
 
@@ -102,21 +125,48 @@ public class SEAndroidManager extends PreferenceActivity {
                             String name = (String)holder.tx.getText();
                             SELinux.setBooleanValue(name, isChecked);
                             holder.cb.setChecked(SELinux.getBooleanValue(name));
+                            saveBooleans();
                         }
                     });
                 return convertView;
             }
 
-            class ViewHolder {
+            private class ViewHolder {
                 TextView tx;
                 CheckBox cb;
             }
+
+            private void saveBooleans()
+            {
+                String[] mNames = SELinux.getBooleanNames();
+                StringBuilder newBooleanList = new StringBuilder();
+                boolean first = true;
+                for (String n : mNames) {
+                    if (first) {
+                        first = false;
+                    } else {
+                        newBooleanList.append(",");
+                    }
+                    newBooleanList.append(n);
+                    newBooleanList.append(":");
+                    newBooleanList.append(SELinux.getBooleanValue(n) ? 1 : 0);
+                }
+                Settings.Secure.putString(getActivity().getContentResolver(),
+                                          Settings.Secure.SELINUX_BOOLEANS,
+                                          newBooleanList.toString());
+            }
+        }
+
+        @Override
+        public void onActivityCreated(Bundle savedInstanceState) {
+            super.onActivityCreated(savedInstanceState);
+            setEmptyText(getActivity().getText(R.string.selinux_no_booleans));
         }
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            mAdapter = new myBooleanAdapter(getActivity(), R.layout.selinux_manage_booleans, 
+            mAdapter = new myBooleanAdapter(getActivity(), R.layout.selinux_manage_booleans,
                                             SELinux.getBooleanNames());
             setListAdapter(mAdapter);
         }

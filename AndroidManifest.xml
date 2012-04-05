@@ -27,13 +27,6 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="SaveSettings" android:exported="false">
-            <intent-filter android:priority="1">
-                <action android:name="android.intent.action.ACTION_SHUTDOWN"/>
-                <action android:name="android.intent.action.REBOOT"/>
-            </intent-filter>
-        </receiver>
-
     </application>
 
 </manifest> 
