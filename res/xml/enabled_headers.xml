@@ -12,4 +12,9 @@
         android:title="@string/selinux_boolean_fragment_title">
     </header>
 
+    <header
+        android:fragment="com.android.seandroid_manager.SEAndroidManager$AVCDeniedReaderFragment"
+        android:title="@string/avc_denied_log_fragment_title">
+    </header>
+
 </preference-headers>

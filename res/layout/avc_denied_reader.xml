@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/refreshButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="@+id/linearLayout2"
+                android:text="@string/avc_denied_log_refresh_button_label"
+                android:layout_toRightOf="@+id/textView1" />
+
+        </RelativeLayout>
+        
+        <ScrollView
+            android:id="@+id/avcLogScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">    
+          
+            <TextView
+                android:id="@+id/avcLogTextView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/avc_denied_log_reload_msg" 
+                android:textIsSelectable="true"/>
+            
+        </ScrollView>
+            
+        
+    </LinearLayout>

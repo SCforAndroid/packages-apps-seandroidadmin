@@ -10,6 +10,10 @@ LOCAL_CERTIFICATE := platform
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
+LOCAL_JNI_SHARED_LIBRARIES := libjni_klogctl
+
+LOCAL_REQUIRED_MODULES := libjni_klogctl
+
 include $(BUILD_PACKAGE)
 
 # Use the folloing include to make our test apk.
