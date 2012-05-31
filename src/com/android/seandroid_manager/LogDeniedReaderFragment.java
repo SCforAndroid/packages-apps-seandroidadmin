@@ -255,6 +255,15 @@ public class LogDeniedReaderFragment extends Fragment {
                 }
                 return true;
 
+            case R.id.MAC:
+                mActionBar.setTitle(R.string.mac_title);
+                mDefaultMessage.setVisibility(View.GONE);
+                logPrefix = getString(R.string.mac_denied_log_filename);
+                mMessageLog.setText(null);
+                new LogcatReader(handleMessage,
+                                 "system", "PackageManager:D", "MMAC_DENIAL:").start();
+                return true;
+
             case R.id.AVC:
                 // display all the avc denials
                 mActionBar.setTitle(R.string.avc_title);

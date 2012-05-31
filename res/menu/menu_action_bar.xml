@@ -13,6 +13,9 @@
         android:title="Logs"
         android:showAsAction="always" >
     <menu>
+      <item android:id="@+id/MAC"
+            android:icon="@drawable/ic_menu_refresh"
+            android:title="MAC" />
       <item android:id="@+id/AVC"
             android:icon="@drawable/ic_menu_refresh"
             android:title="AVC" />

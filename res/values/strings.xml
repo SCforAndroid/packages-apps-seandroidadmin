@@ -26,6 +26,10 @@
     <string name="avc_title">AVC Denied Log</string>
     <string name="log_fragment_title">Logs</string>
     <string name="log_reload_msg">Press One of The "Refresh" Buttons to Update Messages</string>
+    <string name="mac_denied_log_filename">mac_denied_logs</string>
+    <string name="mac_title">MAC Denied Log</string>
+    <string name="mac_set_enforcing">MAC Mode</string>
+    <string name="mac_set_enforcing_summary">Toggle MAC Enforcing Mode</string>
     <string name="manage_selinux_header">MANAGE</string>
     <string name="policy_builder_header">POLICY TOOLS</string>
     <string name="selinux_boolean_fragment_title">Booleans</string>
