@@ -2,19 +2,23 @@
 <preference-headers
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <header android:title="@string/manage_selinux_header"/>
+
     <header
-        android:fragment="com.android.seandroid_manager.SEAndroidManager$SELinuxEnforcingFragment"
+        android:fragment="com.android.seandroid_manager.SELinuxEnforcingFragment"
         android:title="@string/selinux_enforcing_fragment_title">
     </header>
 
     <header
-        android:fragment="com.android.seandroid_manager.SEAndroidManager$SELinuxBooleanFragment"
+        android:fragment="com.android.seandroid_manager.SELinuxBooleanFragment"
         android:title="@string/selinux_boolean_fragment_title">
     </header>
 
+    <header android:title="@string/policy_builder_header" />
+
     <header
-        android:fragment="com.android.seandroid_manager.SEAndroidManager$AVCDeniedReaderFragment"
-        android:title="@string/avc_denied_log_fragment_title">
+        android:fragment="com.android.seandroid_manager.LogDeniedReaderFragment"
+        android:title="@string/log_fragment_title">
     </header>
 
 </preference-headers>

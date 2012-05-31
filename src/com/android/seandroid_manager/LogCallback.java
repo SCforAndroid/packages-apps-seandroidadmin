@@ -2,9 +2,9 @@
 package com.android.seandroid_manager;
 
 /**
- * Used to handle events from parsing the kernel logs looking for AVC messages.
+ * Used to handle events from parsing logs looking for messages.
  */
-public abstract class AVCCallback {
+public abstract class LogCallback {
 
     /**
      * Before parsing begins, this function is called. By default nothing
@@ -15,11 +15,11 @@ public abstract class AVCCallback {
     }
 
     /**
-     * For each AVC denied message encountered, this callback is called. This
-     * must be implemented, each raw kernel AVC message is passed to this
+     * For each message encountered, this callback is called. This
+     * must be implemented, each raw message is passed to this
      * callback. From here further processing can be done.
      * 
-     * @param message The exact AVC denied message encountered while parsing.
+     * @param message The exact message encountered while parsing.
      */
     public abstract void onEvent(String logMessage);
 
@@ -34,7 +34,6 @@ public abstract class AVCCallback {
 
     /**
      * Called when an exception occurs.
-     * The exception generated while trying to get the kernel ring buffer.
      * 
      * @param e The exception generated
      */

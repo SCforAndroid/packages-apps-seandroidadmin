@@ -1,37 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SEAndroidManager</string>
-    <string name="activity_name">SEAndroidManager</string>
-    <string name="app_label">SEAndroid Manager</string>
-    <string name="app_label_launcher">SEAndroid Manager</string>
-    <string name="selinux_disabled_fragment_title">SELinux Disabled</string>
-    <string name="selinux_enforcing_fragment_title">Change SELinux Enforcing Mode</string>
-    <string name="selinux_boolean_fragment_title">Manage SELinux Booleans</string>
-    <string name="selinux_not_enabled">SELinux is not enabled</string>
-    <string name="selinux_status">SELinux status</string>
-    <string name="selinux_title">SELinux</string>
-    <string name="selinux_set_enforcing">SELinux Enforcing Mode</string>
-    <string name="selinux_set_enforcing_summary">Toggle SELinux Enforcing Mode</string>
-    <string name="selinux_manage_booleans">SELinux Booleans</string>
-    <string name="selinux_manage_booleans_summary">Manage SELinux Booleans</string>
-    <string name="selinux_no_booleans">No Booleans</string>
-    <string name="avc_denied_log_fragment_title">AVC Denied Logs</string>
-    <string name="avc_denied_log_reload_msg">Press The "Refresh" Button to Update AVC Denied Messages</string>
-    <string name="avc_denied_log_refresh_button_label">Refresh</string>
-    <string name="avc_denied_log_refresh_text">Refresh AVC Logs</string>
-    <string name="avc_progress_bar_message">Loading&#8230;</string>
-    <string name="avc_logs_key">AVCLogs</string>
-    <string name="avc_dialog_title_error">Error</string>
-    <string name="avc_dialog_title_info">Info</string>
-    <string name="avc_ok_button_text">OK</string>
-    <string name="avc_option_save_button_title">Save</string>
-    <string name="avc_denied_log_filename">avc_denied_logs</string>
-    <string name="avc_denied_log_onsave_dialog_title">File Saved</string>
-    <string name="avc_denied_log_onsave_dialog_message">Logs Saved To: </string>
-    <string name="avc_logs_pulled_key">logsPulled</string>
+    <string name="app_name">SEManager</string>
+    <string name="activity_name">SEManager</string>
     <string name="avc_denied_log_empty_log_msg">No Logs To Save</string>
+    <string name="avc_denied_log_file_extension">.log</string>
+    <string name="avc_denied_log_filename">avc_denied_logs</string>
+    <string name="avc_denied_log_fragment_title">Log Messages</string>
+    <string name="avc_denied_log_onsave_dialog_message">Logs Saved To: </string>
+    <string name="avc_denied_log_reload_msg">Choose a "Refresh" Button to Update Messages</string>
     <!--
-		In java and in reg expressions "\" is an escape
+	In java and in reg expressions "\" is an escape
      	character, so it takes 4 to get 1
      	See http://www.regular-expressions.info/java.html for
      	more info
@@ -39,9 +17,24 @@
      	a filename.
     -->
     <string name="avc_denied_timestamp_format_regex">[\\\\,: ]</string>
-    
     <!-- Everything matched in the regular expression above is replaced with the below string -->
     <string name="avc_denied_timestamp_replacement_char">_</string>
-    <string name="avc_denied_log_file_extension">.log</string>
+    <string name="avc_dialog_title_error">Error</string>
+    <string name="avc_dialog_title_info">Info</string>
+    <string name="avc_progress_bar_message">Loading&#8230;</string>
+    <string name="avc_ok_button_text">OK</string>
+    <string name="avc_title">AVC Denied Log</string>
+    <string name="log_fragment_title">Logs</string>
+    <string name="log_reload_msg">Press One of The "Refresh" Buttons to Update Messages</string>
+    <string name="manage_selinux_header">MANAGE</string>
+    <string name="policy_builder_header">POLICY TOOLS</string>
+    <string name="selinux_boolean_fragment_title">Booleans</string>
+    <string name="selinux_disabled_fragment_title">SELinux Disabled</string>
+    <string name="selinux_enforcing_fragment_title">Enforcing Mode</string>
+    <string name="selinux_manage_booleans">SELinux Booleans</string>
+    <string name="selinux_not_enabled">SELinux is not enabled</string>
+    <string name="selinux_no_booleans">No Booleans</string>
+    <string name="selinux_set_enforcing">SELinux Mode</string>
+    <string name="selinux_set_enforcing_summary">Toggle SELinux Enforcing Mode</string>
 </resources>
 

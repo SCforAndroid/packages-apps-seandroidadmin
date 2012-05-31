@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+      
+  <!-- save to sdcard action bar item -->
+  <item android:id="@+id/saveButton"
+        android:title="Save"
+        android:icon="@android:drawable/ic_menu_save"
+        android:showAsAction="always" />
+  
+  <!-- action bar submenu that has avc/clear items -->
+  <item android:id="@+id/submenu"
+        android:icon="@drawable/ic_menu_moreoverflow"
+        android:title="Logs"
+        android:showAsAction="always" >
+    <menu>
+      <item android:id="@+id/AVC"
+            android:icon="@drawable/ic_menu_refresh"
+            android:title="AVC" />
+      <item android:id="@+id/clear"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            android:title="Clear" />
+    </menu>
+  </item>
+  
+</menu>
