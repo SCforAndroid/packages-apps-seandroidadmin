@@ -1,10 +1,6 @@
 
 package com.android.seandroid_manager;
 
-//import android.app.Fragment;
-//import android.app.ListFragment;
-//import android.content.Intent;
-
 import android.content.Context;
 import android.preference.PreferenceActivity;
 import android.os.SELinux;
