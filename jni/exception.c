@@ -23,10 +23,10 @@ throwNoClassDefError(JNIEnv *env, char *message) {
 	exClass = (*env)->FindClass( env, className );
 
 	if(exClass == NULL) {
-        ALOGE("Could no throw java/lang/NoClassDefFoundError");
-        /* If this happens, the program is out of control */
-        exit(42);
-    }
+            ALOGE("Could not throw java/lang/NoClassDefFoundError");
+            /* If this happens, the program is out of control */
+            exit(42);
+        }
 	return (*env)->ThrowNew( env, exClass, message );
 }
 
