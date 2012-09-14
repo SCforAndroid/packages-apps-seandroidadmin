@@ -2,23 +2,16 @@
 <preference-headers
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <header android:title="@string/manage_selinux_header"/>
+    <header android:id="@+id/enable_device_admin"
+        android:title="@string/device_admin_cb_title"
+        android:summary="@string/device_admin_cb_summary" />
 
-    <header
-        android:fragment="com.android.seandroid_manager.SELinuxEnforcingFragment"
-        android:title="@string/selinux_enforcing_fragment_title">
-    </header>
+    <header android:id="@+id/selinux_admin"
+        android:fragment="com.android.seandroid_admin.SELinuxEnforcingFragment"
+        android:title="@string/selinux_admin_title" />
 
-    <header
-        android:fragment="com.android.seandroid_manager.SELinuxBooleanFragment"
-        android:title="@string/selinux_boolean_fragment_title">
-    </header>
-
-    <header android:title="@string/policy_builder_header" />
-
-    <header
-        android:fragment="com.android.seandroid_manager.LogDeniedReaderFragment"
-        android:title="@string/log_fragment_title">
-    </header>
+    <header android:id="@+id/mmac_admin"
+        android:fragment="com.android.seandroid_admin.MMACFragment"
+        android:title="@string/mmac_admin_title" />
 
 </preference-headers>

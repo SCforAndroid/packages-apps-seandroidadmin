@@ -1,44 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SEManager</string>
-    <string name="activity_name">SEManager</string>
-    <string name="avc_denied_log_empty_log_msg">No Logs To Save</string>
-    <string name="avc_denied_log_file_extension">.log</string>
-    <string name="avc_denied_log_filename">avc_denied_logs</string>
-    <string name="avc_denied_log_fragment_title">Log Messages</string>
-    <string name="avc_denied_log_onsave_dialog_message">Logs Saved To: </string>
-    <string name="avc_denied_log_reload_msg">Choose a "Refresh" Button to Update Messages</string>
-    <!--
-	In java and in reg expressions "\" is an escape
-     	character, so it takes 4 to get 1
-     	See http://www.regular-expressions.info/java.html for
-     	more info
-     	This string determines how a date time object is formated into
-     	a filename.
-    -->
-    <string name="avc_denied_timestamp_format_regex">[\\\\,: ]</string>
-    <!-- Everything matched in the regular expression above is replaced with the below string -->
-    <string name="avc_denied_timestamp_replacement_char">_</string>
-    <string name="avc_dialog_title_error">Error</string>
-    <string name="avc_dialog_title_info">Info</string>
-    <string name="avc_progress_bar_message">Loading&#8230;</string>
-    <string name="avc_ok_button_text">OK</string>
-    <string name="avc_title">AVC Denied Log</string>
-    <string name="log_fragment_title">Logs</string>
-    <string name="log_reload_msg">Press One of The "Refresh" Buttons to Update Messages</string>
-    <string name="mac_denied_log_filename">mac_denied_logs</string>
-    <string name="mac_title">MAC Denied Log</string>
-    <string name="mac_set_enforcing">MAC Mode</string>
-    <string name="mac_set_enforcing_summary">Toggle MAC Enforcing Mode</string>
-    <string name="manage_selinux_header">MANAGE</string>
-    <string name="policy_builder_header">POLICY TOOLS</string>
-    <string name="selinux_boolean_fragment_title">Booleans</string>
+    <string name="app_name">SEAdmin</string>
+    <string name="activity_name">SEAdmin</string>
+
+    <string name="device_admin_label">SE Android Settings Admin</string>
+    <string name="device_admin_desc">This app is the reference implementation
+        for an Device Admin app that can control SELinux and SE Android MMAC
+        settings and policies.</string>
+
+    <!-- Used in home page screen -->
     <string name="selinux_disabled_fragment_title">SELinux Disabled</string>
-    <string name="selinux_enforcing_fragment_title">Enforcing Mode</string>
-    <string name="selinux_manage_booleans">SELinux Booleans</string>
     <string name="selinux_not_enabled">SELinux is not enabled</string>
-    <string name="selinux_no_booleans">No Booleans</string>
-    <string name="selinux_set_enforcing">SELinux Mode</string>
-    <string name="selinux_set_enforcing_summary">Toggle SELinux Enforcing Mode</string>
+
+    <string name="selinux_admin_title">SELinux Administration</string>
+    <string name="mmac_admin_title">SE Android MMAC Administration</string>
+    <string name="selinux_boolean_fragment_title">Booleans</string>
+
+    <!-- Used in Enforcing Fragment -->
+    <string name="enable_admins_cat">Enable admin</string>
+
+    <string name="device_admin_cb_title">Device administrator</string>
+    <string name="device_admin_cb_summary">Allow SEAdmin to become a Device Admin. This is required for the app to function.</string>
+
+    <string name="selinux_cat">SELinux capabilities</string>
+
+    <string name="selinux_admin_cb_title">SELinux admin</string>
+    <string name="selinux_admin_cb_summary">Allow SEAdmin to become a SELinux Admin. This is required for the app to set SELinux settings.</string>
+
+    <string name="selinux_enforcing_cb_title">Enforce SELinux policy</string>
+    <string name="selinux_enforcing_cb_summaryChecked">SELinux in enforcing mode</string>
+    <string name="selinux_enforcing_cb_summaryUnchecked">SELinux in permissive mode</string>
+    <string name="selinux_enforcing_cb_summaryDisabled">Unable to query mode of SELinux</string>
+
+    <string name="selinux_reload_title">Reload SELinux policy</string>
+    <string name="selinux_restore_title">Restore default SELinux policy</string>
+
+    <string name="propertycontexts_reload_title">Reload Property Contexts policy</string>
+    <string name="propertycontexts_restore_title">Restore default Property Contexts policy</string>
+
+    <string name="filecontexts_reload_title">Reload File Contexts policy</string>
+    <string name="filecontexts_restore_title">Restore default File Contexts policy</string>
+
+    <string name="seappcontexts_reload_title">Reload SEApp Contexts policy</string>
+    <string name="seappcontexts_restore_title">Restore default SEApp Contexts policy</string>
+
+    <string name="seandroid_cat">SE Android MMAC capabilities</string>
+
+    <string name="mmac_admin_cb_title">SE Android MMAC admin</string>
+    <string name="mmac_admin_cb_summary">Allow SEAdmin to become a MMAC Admin. This is required for the app to set MMAC settings.</string>
+
+    <string name="mmac_enforcing_cb_title">Enforce MMAC policy</string>
+    <string name="mmac_enforcing_cb_summaryChecked">MMAC in enforcing mode</string>
+    <string name="mmac_enforcing_cb_summaryUnchecked">MMAC in permissive mode</string>
+    <string name="mmac_enforcing_cb_summaryDisabled">Unable to query mode of MMAC</string>
+
+    <string name="mmac_reload_title">Reload MMAC policy</string>
+
+    <string name="mmac_restore_title">Restore default MMAC policy</string>
+
+    <string name="ext_storage_unavail">SDcard unavailable</string>
+
+    <!-- Used in Boolean Fragment -->
+    <string name="selinuxBooleans_title">SELinux Booleans</string>
+    <string name="selinuxBooleans_err_selinuxDisabled">SELinux is not enabled on this device.</string>
+    <string name="selinuxBooleans_err_notDeviceAdmin">SEAdmin is not yet a Device Admin. Go to the Enforcing screen to enable.</string>
+    <string name="selinuxBooleans_err_notSELinuxAdmin">SEAdmin is not yet a SELinux Admin. Go to the Enforcing screen to enable.</string>
+    <string name="selinuxBooleans_err_getBooleans">Error occurred while retrieving booleans</string>
+    <string name="selinuxBooleans_err_noBooleans">No SELinux booleans found</string>
+
 </resources>
 

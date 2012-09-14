@@ -1,21 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.seandroid_manager"
+    package="com.android.seandroid_admin"
     android:versionCode="1"
-    android:versionName="1.0"
-    coreApp="true"
-    android:sharedUserId="android.uid.system">
+    android:versionName="1.0">
 
-    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_LOGS" />
+    <!-- SE Android Admin -->
 
-    <!-- SEAndroid Manager -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application android:label="@string/app_name">
 
-        <activity android:name="SEAndroidManager"
+        <activity android:name="SEAndroidAdminActivity"
             android:label="@string/activity_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,9 +19,14 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name="RestoreSettings" android:exported="false">
-            <intent-filter android:priority="1">
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <receiver android:name="SEAndroidAdmin$myDeviceAdminReceiver"
+                android:label="@string/device_admin_label"
+                android:description="@string/device_admin_desc"
+                android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data android:name="android.app.device_admin"
+                       android:resource="@xml/device_admin" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
             </intent-filter>
         </receiver>
 

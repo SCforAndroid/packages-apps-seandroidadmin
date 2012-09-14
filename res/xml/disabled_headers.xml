@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <header
-        android:fragment="com.android.seandroid_manager.SEAndroidManager$SELinuxDisabledFragment"
         android:title="@string/selinux_disabled_fragment_title">
     </header>
 

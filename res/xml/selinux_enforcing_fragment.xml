@@ -1,15 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen 
+<PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <CheckBoxPreference 
-        android:key="selinux_enforcing"
-        android:title="@string/selinux_set_enforcing"
-        android:summary="@string/selinux_set_enforcing_summary"/>
+    <PreferenceCategory
+        android:title="@string/selinux_cat">
 
-    <CheckBoxPreference
-        android:key="mac_enforcing"
-        android:title="@string/mac_set_enforcing"
-        android:summary="@string/mac_set_enforcing_summary"/>
-	
+        <CheckBoxPreference android:id="@+id/selinux_enforcing_cb"
+            android:key="key_selinux_enforcing"
+            android:title="@string/selinux_enforcing_cb_title" />
+
+        <Preference android:id="@+id/selinux_reload"
+            android:title="@string/selinux_reload_title"
+            android:key="key_selinux_reload" />
+
+        <Preference android:id="@+id/selinux_restore"
+            android:title="@string/selinux_restore_title"
+            android:key="key_selinux_restore" />
+
+        <Preference android:id="@+id/propertycontexts_reload"
+            android:title="@string/propertycontexts_reload_title"
+            android:key="key_propertycontexts_reload" />
+
+        <Preference android:id="@+id/propertycontexts_restore"
+            android:title="@string/propertycontexts_restore_title"
+            android:key="key_propertycontexts_restore" />
+
+        <Preference android:id="@+id/filecontexts_reload"
+            android:title="@string/filecontexts_reload_title"
+            android:key="key_filecontexts_reload" />
+
+        <Preference android:id="@+id/filecontexts_restore"
+            android:title="@string/filecontexts_restore_title"
+            android:key="key_filecontexts_restore" />
+
+        <Preference android:id="@+id/seappcontexts_reload"
+            android:title="@string/seappcontexts_reload_title"
+            android:key="key_seappcontexts_reload" />
+
+        <Preference android:id="@+id/seappcontexts_restore"
+            android:title="@string/seappcontexts_restore_title"
+            android:key="key_seappcontexts_restore" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/selinux_boolean_fragment_title">
+    </PreferenceCategory>
+
 </PreferenceScreen>

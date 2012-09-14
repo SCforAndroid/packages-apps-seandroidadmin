@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="@string/seandroid_cat">
+
+        <CheckBoxPreference
+            android:key="key_mmac_enforcing"
+            android:title="@string/mmac_enforcing_cb_title" />
+
+        <Preference
+            android:title="@string/mmac_reload_title"
+            android:key="key_mmac_reload" />
+
+        <Preference
+            android:title="@string/mmac_restore_title"
+            android:key="key_mmac_restore" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
