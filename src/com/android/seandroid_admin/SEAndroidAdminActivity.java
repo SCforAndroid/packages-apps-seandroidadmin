@@ -60,6 +60,13 @@ public class SEAndroidAdminActivity extends PreferenceActivity {
         //TODO maybe enable or disable headers here based on whether were device admin?
     }
 
+    @Override
+    public PreferenceActivity.Header onGetInitialHeader() {
+        Header h = new PreferenceActivity.Header();
+        h.fragment = SELinuxEnforcingFragment.class.getCanonicalName();
+        return h;
+    }
+
     private static class HeaderViewHolder {
         TextView title;
         Switch switch_;
