@@ -1,5 +1,6 @@
 package com.android.seandroid_admin;
 
+import android.app.admin.DevicePolicyManager;
 import android.os.Bundle;
 import android.os.SELinux;
 import android.preference.CheckBoxPreference;
@@ -132,7 +133,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                     Log.v(TAG, "Reload of SELinux policy requested");
                     try {
                         byte[] policy = FileUtils.readFileToByteArray(mSELinuxPolicyFile);
-                        if (!mAdmin.mDPM.setSELinuxPolicy(mAdmin.mDeviceAdmin, policy)) {
+                        if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                                DevicePolicyManager.SELINUX_POLICY_FILE, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -151,7 +153,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Delete custom SELinux policy requested");
-                    if (!mAdmin.mDPM.setSELinuxPolicy(mAdmin.mDeviceAdmin, null)) {
+                    if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                            DevicePolicyManager.SELINUX_POLICY_FILE, null)) {
                         Toast.makeText(mActivity, "Unable to remove custom policy", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -168,7 +171,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                     Log.v(TAG, "Reload of Property Contexts policy requested");
                     try {
                         byte[] policy = FileUtils.readFileToByteArray(mPropertyContextsPolicyFile);
-                        if (!mAdmin.mDPM.setPropertyContexts(mAdmin.mDeviceAdmin, policy)) {
+                        if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                                DevicePolicyManager.PROPERTY_CONTEXTS_FILE, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -187,7 +191,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Delete custom Property Contexts policy requested");
-                    if (!mAdmin.mDPM.setPropertyContexts(mAdmin.mDeviceAdmin, null)) {
+                    if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                            DevicePolicyManager.PROPERTY_CONTEXTS_FILE, null)) {
                         Toast.makeText(mActivity, "Unable to remove custom policy", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -204,7 +209,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                     Log.v(TAG, "Reload of File Contexts policy requested");
                     try {
                         byte[] policy = FileUtils.readFileToByteArray(mFileContextsPolicyFile);
-                        if (!mAdmin.mDPM.setFileContexts(mAdmin.mDeviceAdmin, policy)) {
+                        if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                                DevicePolicyManager.FILE_CONTEXTS_FILE, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -223,7 +229,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Delete custom File Contexts policy requested");
-                    if (!mAdmin.mDPM.setFileContexts(mAdmin.mDeviceAdmin, null)) {
+                    if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                            DevicePolicyManager.FILE_CONTEXTS_FILE, null)) {
                         Toast.makeText(mActivity, "Unable to remove custom policy", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -240,7 +247,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                     Log.v(TAG, "Reload of SEApp Contexts policy requested");
                     try {
                         byte[] policy = FileUtils.readFileToByteArray(mSEAppContextsPolicyFile);
-                        if (!mAdmin.mDPM.setSEappContexts(mAdmin.mDeviceAdmin, policy)) {
+                        if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                                DevicePolicyManager.SEAPP_CONTEXTS_FILE, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -259,7 +267,8 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Delete custom SEApp Contexts policy requested");
-                    if (!mAdmin.mDPM.setSEappContexts(mAdmin.mDeviceAdmin, null)) {
+                    if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                            DevicePolicyManager.SEAPP_CONTEXTS_FILE, null)) {
                         Toast.makeText(mActivity, "Unable to remove custom policy", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();

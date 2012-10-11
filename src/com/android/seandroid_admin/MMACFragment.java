@@ -1,5 +1,6 @@
 package com.android.seandroid_admin;
 
+import android.app.admin.DevicePolicyManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -76,7 +77,8 @@ public class MMACFragment extends SEAndroidAdminFragment
                     Log.v(TAG, "Reload of MMAC policy requested");
                     try {
                         byte[] policy = FileUtils.readFileToByteArray(mMMACpolicyFile);
-                        if (!mAdmin.mDPM.setMMACpolicy(mAdmin.mDeviceAdmin, policy)) {
+                        if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                                DevicePolicyManager.MMAC_POLICY_FILE, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
@@ -95,7 +97,8 @@ public class MMACFragment extends SEAndroidAdminFragment
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Delete custom MMAC policy requested");
-                    if (!mAdmin.mDPM.setMMACpolicy(mAdmin.mDeviceAdmin, null)) {
+                    if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
+                            DevicePolicyManager.MMAC_POLICY_FILE, null)) {
                         Toast.makeText(mActivity, "Unable to remove custom policy", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(mActivity, "Success", Toast.LENGTH_SHORT).show();
