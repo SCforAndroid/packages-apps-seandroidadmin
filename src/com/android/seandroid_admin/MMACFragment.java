@@ -10,7 +10,7 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.commons.io.FileUtils;
+import com.google.common.io.Files;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,7 +76,7 @@ public class MMACFragment extends SEAndroidAdminFragment
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Reload of MMAC policy requested");
                     try {
-                        byte[] policy = FileUtils.readFileToByteArray(mMMACpolicyFile);
+                        byte[] policy = Files.toByteArray(mMMACpolicyFile);
                         if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
                                 DevicePolicyManager.MMAC_POLICY_FILE, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();

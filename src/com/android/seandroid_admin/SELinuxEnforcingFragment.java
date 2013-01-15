@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.android.seandroid_admin.R;
 
-import org.apache.commons.io.FileUtils;
+import com.google.common.io.Files;
 
 import java.io.File;
 import java.io.IOException;
@@ -132,7 +132,7 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Reload of SELinux policy requested");
                     try {
-                        byte[] policy = FileUtils.readFileToByteArray(mSELinuxPolicyFile);
+                        byte[] policy = Files.toByteArray(mSELinuxPolicyFile);
                         if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
                                 DevicePolicyManager.SEPOLICY_FILE_SEPOLICY, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
@@ -170,7 +170,7 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Reload of Property Contexts policy requested");
                     try {
-                        byte[] policy = FileUtils.readFileToByteArray(mPropertyContextsPolicyFile);
+                        byte[] policy = Files.toByteArray(mPropertyContextsPolicyFile);
                         if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
                                 DevicePolicyManager.SEPOLICY_FILE_PROPCTXS, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
@@ -208,7 +208,7 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Reload of File Contexts policy requested");
                     try {
-                        byte[] policy = FileUtils.readFileToByteArray(mFileContextsPolicyFile);
+                        byte[] policy = Files.toByteArray(mFileContextsPolicyFile);
                         if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
                                 DevicePolicyManager.SEPOLICY_FILE_FILECTXS, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
@@ -246,7 +246,7 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                 public boolean onPreferenceClick(Preference preference) {
                     Log.v(TAG, "Reload of SEApp Contexts policy requested");
                     try {
-                        byte[] policy = FileUtils.readFileToByteArray(mSEAppContextsPolicyFile);
+                        byte[] policy = Files.toByteArray(mSEAppContextsPolicyFile);
                         if (!mAdmin.mDPM.setCustomPolicyFile(mAdmin.mDeviceAdmin,
                                 DevicePolicyManager.SEPOLICY_FILE_SEAPPCTXS, policy)) {
                             Toast.makeText(mActivity, "Unable to set policy", Toast.LENGTH_SHORT).show();
