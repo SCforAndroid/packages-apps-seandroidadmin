@@ -1,3 +1,2 @@
 # Keep all Fragments in this package, which are used by reflection.
--keep class com.android.seandroid_admin.*Fragment*
--keep class com.android.senadroid_admin.*Settings*
+-keep class com.android.seandroid_admin.*

@@ -11,11 +11,4 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 LOCAL_STATIC_JAVA_LIBRARIES := guava
 
-LOCAL_JNI_SHARED_LIBRARIES :=
-
-LOCAL_REQUIRED_MODULES :=
-
 include $(BUILD_PACKAGE)
-
-# Use the folloing include to make our test apk.
-include $(call all-makefiles-under,$(LOCAL_PATH))
