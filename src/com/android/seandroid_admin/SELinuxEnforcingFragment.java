@@ -120,7 +120,7 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
                     //XXX To do small text, will need to define own xml layout
                     CheckBoxPreference pref = new CheckBoxPreference(mActivity);
                     pref.setTitle(name);
-                    pref.setChecked(mAdmin.mDPM.getSELinuxBooleanValue(mAdmin.mDeviceAdmin, name));
+                    pref.setChecked(SELinux.getBooleanValue(name));
                     pref.setOnPreferenceChangeListener(new OnPreferenceChangeListener() {
                         @Override
                         public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -326,8 +326,9 @@ public class SELinuxEnforcingFragment extends SEAndroidAdminFragment
 
         if (mAdmin.isSELinuxAdmin) {
             mSELinuxEnforceCheckbox.setEnabled(true);
-            mSELinuxEnforceCheckbox.setChecked(mAdmin.isEnforcingSELinux);
-            if (mAdmin.isEnforcingSELinux) {
+            boolean systemState = SELinux.isSELinuxEnforced();
+            mSELinuxEnforceCheckbox.setChecked(systemState);
+            if (systemState) {
                 mSELinuxEnforceCheckbox.setSummary(mSELinuxEnforceCheckboxSummaryChecked);
             } else {
                 mSELinuxEnforceCheckbox.setSummary(mSELinuxEnforceCheckboxSummaryUnchecked);

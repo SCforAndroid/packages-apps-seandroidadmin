@@ -17,6 +17,7 @@
 package com.android.seandroid_admin;
 
 import android.app.admin.DevicePolicyManager;
+import android.content.pm.SELinuxMMAC;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
@@ -155,8 +156,9 @@ public class MMACFragment extends SEAndroidAdminFragment
         
         if (mAdmin.isMMACadmin) {
             mMMACenforceCheckbox.setEnabled(true);
-            mMMACenforceCheckbox.setChecked(mAdmin.isEnforcingMMAC);
-            if (mAdmin.isEnforcingMMAC) {
+            boolean systemState = SELinuxMMAC.getEnforcingMode();
+            mMMACenforceCheckbox.setChecked(systemState);
+            if (systemState) {
                 mMMACenforceCheckbox.setSummary(mMMACenforceCheckboxSummaryChecked);
             } else {
                 mMMACenforceCheckbox.setSummary(mMMACenforceCheckboxSummaryUnchecked);
