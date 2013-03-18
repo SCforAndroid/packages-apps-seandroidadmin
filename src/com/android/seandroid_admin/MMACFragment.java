@@ -17,8 +17,8 @@
 package com.android.seandroid_admin;
 
 import android.app.admin.DevicePolicyManager;
-import android.content.pm.SELinuxMMAC;
 import android.os.Bundle;
+import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -40,6 +40,7 @@ public class MMACFragment extends SEAndroidAdminFragment
     private static final String KEY_MMAC_RELOAD = "key_mmac_reload";
     private static final String KEY_MMAC_RESTORE = "key_mmac_restore";
 
+    private static final String MMAC_ENFORCE_PROPERTY = "persist.mmac.enforce";
     private static final String MMAC_POLICY_FILE = "mac_permissions.xml";
 
     private CheckBoxPreference mMMACenforceCheckbox;
@@ -156,7 +157,7 @@ public class MMACFragment extends SEAndroidAdminFragment
         
         if (mAdmin.isMMACadmin) {
             mMMACenforceCheckbox.setEnabled(true);
-            boolean systemState = SELinuxMMAC.getEnforcingMode();
+            boolean systemState = SystemProperties.getBoolean(MMAC_ENFORCE_PROPERTY, false);
             mMMACenforceCheckbox.setChecked(systemState);
             if (systemState) {
                 mMMACenforceCheckbox.setSummary(mMMACenforceCheckboxSummaryChecked);
