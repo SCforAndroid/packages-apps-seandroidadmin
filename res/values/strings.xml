@@ -18,9 +18,9 @@
     <string name="app_name">SEAdmin</string>
     <string name="activity_name">SEAdmin</string>
 
-    <string name="device_admin_label">SE Android Settings Admin</string>
+    <string name="device_admin_label">SE Admin</string>
     <string name="device_admin_desc">This app is the reference implementation
-        for an Device Admin app that can control SELinux and SE Android MMAC
+        for an Device Admin app that can control SELinux and MMAC
         settings and policies.</string>
 
     <!-- Used in home page screen -->
@@ -28,7 +28,7 @@
     <string name="selinux_not_enabled">SELinux is not enabled</string>
 
     <string name="selinux_admin_title">SELinux Administration</string>
-    <string name="mmac_admin_title">SE Android MMAC Administration</string>
+    <string name="mmac_admin_title">MMAC Administration</string>
     <string name="selinux_boolean_fragment_title">Booleans</string>
 
     <!-- Used in Enforcing Fragment -->
@@ -59,9 +59,9 @@
     <string name="seappcontexts_reload_title">Reload SEApp Contexts policy</string>
     <string name="seappcontexts_restore_title">Restore default SEApp Contexts policy</string>
 
-    <string name="seandroid_cat">SE Android MMAC capabilities</string>
+    <string name="seandroid_cat">MMAC capabilities</string>
 
-    <string name="mmac_admin_cb_title">SE Android MMAC admin</string>
+    <string name="mmac_admin_cb_title">MMAC admin</string>
     <string name="mmac_admin_cb_summary">Allow SEAdmin to become a MMAC Admin. This is required for the app to set MMAC settings.</string>
 
     <string name="mmac_enforcing_cb_title">Enforce MMAC policy</string>
