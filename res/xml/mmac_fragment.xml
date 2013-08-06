@@ -17,6 +17,22 @@
             android:title="@string/mmac_restore_title"
             android:key="key_mmac_restore" />
 
+        <Preference
+            android:title="Reload MMAC types"
+            android:key="key_types_reload" />
+
+        <Preference
+            android:title="Restore MMAC types"
+            android:key="key_types_restore" />
+
+        <Preference
+            android:title="Reload Intent policy"
+            android:key="key_intent_reload" />
+
+        <Preference
+            android:title="Restore Intent policy"
+            android:key="key_intent_restore" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
